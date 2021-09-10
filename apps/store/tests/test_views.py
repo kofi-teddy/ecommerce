@@ -1,14 +1,11 @@
 from unittest import skip
 
-from django.http import HttpRequest, request
-from django.test import TestCase, Client, RequestFactory
 from django.contrib.auth.models import User
+from django.http import HttpRequest
+from django.test import Client, RequestFactory, TestCase
 from django.urls import reverse
-
 from store.models import Category, Product
 from store.views import all_products
-
-
 
 # def test_homepage_url(self):
 #     '''
