@@ -1,0 +1,46 @@
+// auto_now_add trigers ones
+auto_now_add=True 
+
+// auto_now trigers whenever a model is update
+auto_now=True
+
+
+// Coverage
+// use coverage run to run test
+coverage run manage.py test
+
+
+// View coverage report
+coverage report
+
+// omit environmental variables files from coverage test
+coverage run --omit='*/pypoetry/*'manage.py test
+coverage run --omit='*/venv/*' manage.py test
+
+// create html with coverage
+coverage html
+
+// how to skip test using unittest skip
+from unittest import skip
+
+@skip('demonstrating skip')
+class TestSkip(TestCase):
+    def test_skip_example(self):
+        pass
+
+
+// using flake8
+// use flake8 to check to compare with pep8 style guide
+flake8
+
+// use setup.cfg file to configure flake8
+// setup.cfg file
+[flake8]
+exclude = .git, *migrations*, *pypoetry*
+max-line-length = 119 
+
+
+// how to decode django session data
+from django.contrib.session.models import session
+s = Session.objects.get(pk='keyhere')
+s.get_decoded()
