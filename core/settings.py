@@ -30,12 +30,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'yourdomain.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.basket',
     'apps.store',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -69,7 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # Enable categories to be viewed on all pages
-                'apps.store.views.categories'
+                'apps.store.context_processors.categories',
             ],
         },
     },
